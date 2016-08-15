@@ -1,0 +1,27 @@
+{
+  "name": "simpleSiteInNode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "hbs": "^4.0.0",
+    "jade": "^1.11.0",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5"
+  },
+  "dependencies-dev": {
+    "morgan": "^1.7.0"
+  }
+}
